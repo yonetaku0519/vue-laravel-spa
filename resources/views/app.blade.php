@@ -21,7 +21,7 @@
             
             <header-component></header-component>
             <example-component></example-component>
-            
+            <router-view></router-view>
             
         </div>
         

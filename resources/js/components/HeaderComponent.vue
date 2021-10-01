@@ -2,10 +2,14 @@
     <div class="container-fluid bg-dark mb-3">
         <div class="container">
             <nav class="navbar navbar-dark">
-                <span class="navbar-bland mb-0 h1">Vue Laravel SPA</span>
+                <span class="navbar-brand mb-0 h1">Vue Laravel SPA</span>
                 <div>
-                    <button class="btn btn-success">List</button>
-                    <button class="btn btn-success">ADD</button>
+                    <router-link v-bind:to="{name: 'task.list'}">
+                        <button class="btn btn-success">List</button>
+                    </router-link>
+                    <router-link v-bind:to="{name: 'task.create'}">
+                        <button class="btn btn-success">ADD</button>
+                    </router-link>
                 </div>
             </nav>
         </div>
