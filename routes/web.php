@@ -11,8 +11,10 @@
 |
 */
 
-Route::get('/{any}', function () {
-    return view('app');
-})->where('any','.*');
+// Route::get('/{any}', function () {
+//     return view('app');
+// })->where('any','.*');
 
 Route::get('/tasks', 'TaskController@index');
+Route::post('/tasks', 'TaskController@store');
+Route::get('/tasks/{task}', 'TaskController@show');
