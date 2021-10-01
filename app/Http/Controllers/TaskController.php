@@ -22,4 +22,8 @@ class TaskController extends Controller
         $task->update($request->all());
         return $task;
     }
+    public function destroy(Task $task) {
+        $task->delete();
+        return $task;
+    }
 }
