@@ -30,6 +30,28 @@
 export default {
     props: {
         task: String
+    },
+    data: function() {
+        return {
+            task:{}
+        }
+    },
+    methods: {
+        getTask() {
+            axios.get('/api/tasks/' + this.taskId)
+                .then((res) => {
+                    this.task = res.data;
+                });
+        },
+        submit() {
+            axios.post('api/tasks', this.task)
+                .then((res) => {
+                    this.$router.push({name: 'task.list'});
+                });
+        }
+    },
+    mounted() {
+        this.getTask();
     }
 }
 </script>
