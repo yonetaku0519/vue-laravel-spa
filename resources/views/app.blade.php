@@ -15,12 +15,13 @@
         <!-- Styles -->
         <link href="{{ mix('/css/app.css') }}" rel="stylesheet">
         
+        
+        
     </head>
     <body>
         <div id="app">
             
             <header-component></header-component>
-            <example-component></example-component>
             <router-view></router-view>
             
         </div>

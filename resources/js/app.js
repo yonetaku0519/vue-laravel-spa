@@ -4,7 +4,6 @@ import TaskListComponent from "./components/TaskListComponent";
 import TaskCreateComponent from "./components/TaskCreateComponent";
 import TaskShowComponent from "./components/TaskShowComponent";
 import TaskEditComponent from "./components/TaskEditComponent";
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -25,21 +24,17 @@ const router = new VueRouter({
             name: 'task.list',
             component: TaskListComponent
         },
-        
         {
             path: '/tasks/create',
             name: 'task.create',
             component: TaskCreateComponent
-            
         },
-        
         {
             path: '/tasks/:taskId',
             name: 'task.show',
             component: TaskShowComponent,
             props: true
         },
-        
         {
             path: '/tasks/:taskId/edit',
             name: 'task.edit',
@@ -61,9 +56,7 @@ const router = new VueRouter({
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('header-component',HeaderComponent);
-
-
+Vue.component('header-component', HeaderComponent);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

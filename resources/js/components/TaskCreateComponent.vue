@@ -13,7 +13,7 @@
                     </div>
                     <div class="form-group row">
                         <label for="person-in-change" class="col-sm-3 col-form-label">Parson In Change</label>
-                        <input type="text" class="col-sm-9 form-control" id="person-in-change" v-model="task.person-in-change">
+                        <input type="text" class="col-sm-9 form-control" id="person-in-change" v-model="task.person-in_change">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -31,7 +31,7 @@ export default {
     },
     methods: {
         submit() {
-            axios.post('api/tasks', this.task)
+            axios.post('/api/tasks', this.task)
                 .then((res) => {
                     this.$router.push({name: 'task.list'});
                 });
