@@ -16,8 +16,8 @@
                         <input type="text" class="col-sm-9 form-control" id="content" v-model="task.content">
                     </div>
                     <div class="form-group row">
-                        <label for="person-in-change" class="col-sm-3 col-form-label">Parson In Change</label>
-                        <input type="text" class="col-sm-9 form-control" id="person-in-change" v-model="task.person_in_change">
+                        <label for="person-in-charge" class="col-sm-3 col-form-label">Person In Charge</label>
+                        <input type="text" class="col-sm-9 form-control" id="person-in-charge" v-model="task.person_in_charge">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -29,11 +29,11 @@
 <script>
 export default {
     props: {
-        task: String
+        taskId: Number
     },
-    data: function() {
+    data: function () {
         return {
-            task:{}
+            task: {}
         }
     },
     methods: {
@@ -44,9 +44,9 @@ export default {
                 });
         },
         submit() {
-            axios.post('/api/tasks', this.task)
+            axios.put('/api/tasks/' + this.taskId, this.task)
                 .then((res) => {
-                    this.$router.push({name: 'task.list'});
+                    this.$router.push({name: 'task.list'})
                 });
         }
     },

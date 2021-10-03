@@ -12,6 +12,7 @@ class TaskController extends Controller
         return Task::all();
     }
     public function store(Request $request) {
+        echo($request);
         return Task::create($request->all());
     }
     
@@ -19,6 +20,7 @@ class TaskController extends Controller
         return $task;
     }
     public function update(Request $request, Task $task) {
+        dd($request);
         $task->update($request->all());
         return $task;
     }
